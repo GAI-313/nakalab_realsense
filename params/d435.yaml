@@ -1,9 +1,9 @@
 /**:
   ros__parameters:
     # Parameters that can be modified during runtime
-    depth_module.profile: "640,480,30"
+    depth_module.profile: "640,480,15"
     depth_module.enable_auto_exposure: true
-    rgb_camera.profile: "640,480,30"
+    rgb_camera.profile: "640,480,15"
     rgb_camera.enable_auto_exposure: true
     enable_depth: true
     enable_color: true
