@@ -30,5 +30,7 @@ ros2 launch nakalab_realsense camera_launch.py --show-args
 |Argument|Default value|Description|
 |:---:|:---:|:---|
 |params_file|[/params/d435.yaml](/params/d435.yaml)|ROS2 パラメータ YAML ファイルパス|
+|xacro_file|[/xacro/d435.urdf.xacro](/xacro/d435.urdf.xacro)|デモ用カメラの Xacro モデルファイルの絶対パス|
 |camera_name|`d435`|使用するカメラ名。子名前空間、リンク、ノード名に対応します。|
 |namespace|`''`|親名前空間|
+|use_description|`False`|デモ用のカメラモデルを使用し、Rviz2 を起動する|
