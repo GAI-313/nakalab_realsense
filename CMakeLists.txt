@@ -11,6 +11,8 @@ find_package(ament_cmake REQUIRED)
 install(DIRECTORY
   launch
   params
+  urdf
+  rviz
   DESTINATION share/${PROJECT_NAME}/
 )
 
