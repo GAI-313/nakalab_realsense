@@ -1,4 +1,9 @@
 # nakalab_realsense
+
+ネイティブサポートカメラ
+- D435
+- D415
+
 　`rules` ファイルのコピー
 ```bash
 sudo cp 99-realsense.tules /lib/udev/rules.d/
@@ -20,7 +25,16 @@ colcon build --symlink-install --packages-up-to nakalab_realsense
 ```
 　実行
 ```bash
+# d435 カメラとして起動
 ros2 launch nakalab_realsense camera_launch.py
+```
+```bash
+# d435 カメラとして起動
+ros2 launch nakalab_realsense d435_launch.py
+```
+```bash
+# d415 カメラとして起動
+ros2 launch nakalab_realsense d415_launch.py
 ```
 
 ## LaunchArguments

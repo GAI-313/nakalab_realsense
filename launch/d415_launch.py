@@ -16,11 +16,11 @@ def generate_launch_description():
 
     default_params = os.path.join(
         get_package_share_directory('nakalab_realsense'),
-        'params', 'd435.yaml'
+        'params', 'd415.yaml'
     )
     default_xacro = os.path.join(
         get_package_share_directory('nakalab_realsense'),
-        'urdf', 'd435.urdf.xacro'
+        'urdf', 'd415.urdf.xacro'
     )
 
 
@@ -30,7 +30,7 @@ def generate_launch_description():
         description='YAML ROS2 パラメータファイルの絶対パス'
     )
     declare_camera_name = DeclareLaunchArgument(
-        'camera_name', default_value='d435',
+        'camera_name', default_value='d415',
         description='カメラ名'
     )
     declare_namespace = DeclareLaunchArgument(
@@ -71,7 +71,7 @@ def generate_launch_description():
         arguments=['-d',
             os.path.join(
                 get_package_share_directory('nakalab_realsense'),
-                'rviz', 'd435.rviz'
+                'rviz', 'd415.rviz'
             )
         ],
         condition=IfCondition(LaunchConfiguration('use_description'))

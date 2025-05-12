@@ -5,10 +5,10 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /TF1/Frames1
-        - /PointCloud21
-        - /PointCloud21/Topic1
+        - /Depth1/Visibility1
+        - /RRGB1
       Splitter Ratio: 0.5
-    Tree Height: 1524
+    Tree Height: 270
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -53,34 +53,34 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        d435_bottom_screw_frame:
+        d415_bottom_screw_frame:
           Value: false
-        d435_color_frame:
+        d415_color_frame:
           Value: false
-        d435_color_optical_frame:
+        d415_color_optical_frame:
           Value: false
-        d435_depth_frame:
+        d415_depth_frame:
           Value: false
-        d435_depth_optical_frame:
+        d415_depth_optical_frame:
           Value: false
-        d435_link:
+        d415_link:
           Value: false
         world:
-          Value: false
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: true
+      Show Names: false
       Tree:
         world:
-          d435_bottom_screw_frame:
-            d435_link:
-              d435_color_frame:
-                d435_color_optical_frame:
+          d415_bottom_screw_frame:
+            d415_link:
+              d415_color_frame:
+                d415_color_optical_frame:
                   {}
-              d435_depth_frame:
-                d435_depth_optical_frame:
+              d415_depth_frame:
+                d415_depth_optical_frame:
                   {}
       Update Interval: 0
       Value: true
@@ -102,11 +102,11 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        d435_bottom_screw_frame:
+        d415_bottom_screw_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        d435_link:
+        d415_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -118,7 +118,7 @@ Visualization Manager:
       Mass Properties:
         Inertia: false
         Mass: false
-      Name: Realsense Camera
+      Name: RobotModel
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -149,42 +149,56 @@ Visualization Manager:
       Style: Flat Squares
       Topic:
         Depth: 5
-        Durability Policy: System Default
+        Durability Policy: Volatile
         Filter size: 10
-        History Policy: Keep All
+        History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /d435/depth/color/points
+        Value: /d415/depth/color/points
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
-    - Class: rviz_default_plugins/Image
+    - Class: rviz_default_plugins/Camera
       Enabled: true
-      Max Value: 1
-      Median window: 5
-      Min Value: 0
-      Name: Image
-      Normalize Range: true
+      Far Plane Distance: 100
+      Image Rendering: background and overlay
+      Name: Depth
+      Overlay Alpha: 0.5
       Topic:
         Depth: 5
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /d435/color/image_raw
+        Value: /d415/depth/image_rect_raw
       Value: true
-    - Class: rviz_default_plugins/Image
+      Visibility:
+        Grid: true
+        PointCloud2: true
+        RRGB: true
+        RobotModel: true
+        TF: true
+        Value: false
+      Zoom Factor: 1
+    - Class: rviz_default_plugins/Camera
       Enabled: true
-      Max Value: 1
-      Median window: 5
-      Min Value: 0
-      Name: Image
-      Normalize Range: true
+      Far Plane Distance: 100
+      Image Rendering: background and overlay
+      Name: RRGB
+      Overlay Alpha: 0.5
       Topic:
         Depth: 5
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /d435/depth/image_rect_raw
+        Value: /d415/color/image_raw
       Value: true
+      Visibility:
+        Depth: true
+        Grid: true
+        PointCloud2: true
+        RobotModel: true
+        TF: true
+        Value: false
+      Zoom Factor: 1
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -231,7 +245,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.4255256652832031
+      Distance: 2.596487283706665
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -240,26 +254,28 @@ Visualization Manager:
       Focal Point:
         X: 0
         Y: 0
-        Z: 1
+        Z: 0
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.1850000023841858
-      Target Frame: world
+      Pitch: 0.17479640245437622
+      Target Frame: d415_link
       Value: Orbit (rviz_default_plugins)
-      Yaw: 3.8699951171875
+      Yaw: 2.8854002952575684
     Saved: ~
 Window Geometry:
+  Depth:
+    collapsed: false
   Displays:
     collapsed: false
   Height: 2032
   Hide Left Dock: false
   Hide Right Dock: true
-  Image:
+  QMainWindow State: 000000ff00000000fd000000040000000000000575000006eefc020000000afb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000006e0000051c0000018200fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a00440065007000740068010000006e0000032d0000004a00fffffffb00000008005200520047004201000003a7000003b50000004a00ffffff000000010000015f000006eefc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000006e000006ee0000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e740000005afc0100000002fb0000000800540069006d0065010000000000000e740000058100fffffffb0000000800540069006d00650100000000000004500000000000000000000008f3000006ee00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  RRGB:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000048a000006eefc020000000afb000000100044006900730070006c0061007900730200000397000001820000048a000006eefb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a0049006d00610067006503000000bb0000024c000003a000000306fb0000000a0049006d00610067006503000000a60000055e000003e20000026a00000001000003bd000006eefc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000006e000006ee0000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000e7400000182fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e740000005afc0100000002fb0000000800540069006d0065010000000000000e740000058100fffffffb0000000800540069006d0065010000000000000450000000000000000000000e74000006ee00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
