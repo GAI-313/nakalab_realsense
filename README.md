@@ -3,6 +3,10 @@
 ネイティブサポートカメラ
 - D435
 - D415
+- L515（Docker）
+
+> [!WARNING]
+> Realsense L515 を使用する場合は Docker が必要となります。
 
 　`rules` ファイルのコピー
 ```bash
@@ -35,6 +39,10 @@ ros2 launch nakalab_realsense d435_launch.py
 ```bash
 # d415 カメラとして起動
 ros2 launch nakalab_realsense d415_launch.py
+```
+```bash
+# l515 カメラとして起動
+docker compose up l515
 ```
 
 ## LaunchArguments
