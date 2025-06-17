@@ -38,6 +38,7 @@ COPY package.xml package.xml
 COPY launch launch
 COPY params params
 COPY urdf urdf
+COPY meshes meshes
 COPY rviz rviz
 COPY CMakeLists.txt CMakeLists.txt
 WORKDIR /ws

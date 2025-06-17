@@ -24,12 +24,14 @@ services:
       - ~/.config/pulse/cookie:/tmp/pulse/cookie:ro
       - /tmp/.X11-unix:/tmp/.X11-unix
       - $HOME/.Xauthority/:/root/.Xauthority
-      - package.xml:/ws/src/nakalab_realsense/package.xml
-      - CMakeLists.txt:/ws/src/nakalab_realsense/CMakeLists.txt
-      - launch:/ws/src/nakalab_realsense/launch
-      - urdf:/ws/src/nakalab_realsense/urdf
-      - params:/ws/src/nakalab_realsense/params
-      - rviz:/ws/src/nakalab_realsense/rviz
+      - ./package.xml:/ws/src/nakalab_realsense/package.xml
+      - ./CMakeLists.txt:/ws/src/nakalab_realsense/CMakeLists.txt
+      - ./launch:/ws/src/nakalab_realsense/launch
+      - ./urdf:/ws/src/nakalab_realsense/urdf
+      - ./meshes:/ws/src/nakalab_realsense/meshes
+      - ./params:/ws/src/nakalab_realsense/params
+      - ./rviz:/ws/src/nakalab_realsense/rviz
       - /dev:/dev
     devices:
        - /dev:/dev
+    command: "bash -c -i \"ros2 launch nakalab_realsense l515_launch.py\""

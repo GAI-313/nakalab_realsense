@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="sensor_l515" xmlns:xacro="http://ros.org/wiki/xacro">
+    <link name="world"/>
+    
+    <xacro:include filename="$(find nakalab_realsense)/urdf/_l515.urdf.xacro" />
+    <xacro:arg name="camera_name" default="l515" />
+
+    <xacro:sensor_l515 parent="world" name="$(arg camera_name)" >
+        <origin xyz="0 0 1.0" rpy="0 0 0"/>
+    </xacro:sensor_l515>
+    
+</robot>
