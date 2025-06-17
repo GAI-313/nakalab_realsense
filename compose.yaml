@@ -1,0 +1,35 @@
+services:
+  l515:
+    container_name: humble.l515
+    image: gai313/ros2:humble.l515
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - ROS=humble
+    privileged: true
+    ipc: host
+    network_mode: host
+    tty: true
+    stdin_open: true
+    environment:
+      - DISPLAY=${DISPLAY}
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID}
+      - RMW_IMPLEMENTATION=${RMW_IMPLEMENTATION}
+      - GIT_PYTHON_REFRESH=quiet
+    volumes:
+      - /run/user/1000/pulse/native:/tmp/pulse/native
+      - ~/.config/pulse/cookie:/tmp/pulse/cookie:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority/:/root/.Xauthority
+      - package.xml:/ws/src/nakalab_realsense/package.xml
+      - CMakeLists.txt:/ws/src/nakalab_realsense/CMakeLists.txt
+      - launch:/ws/src/nakalab_realsense/launch
+      - urdf:/ws/src/nakalab_realsense/urdf
+      - params:/ws/src/nakalab_realsense/params
+      - rviz:/ws/src/nakalab_realsense/rviz
+      - /dev:/dev
+    devices:
+       - /dev:/dev
