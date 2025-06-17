@@ -2,11 +2,11 @@ services:
   l515:
     container_name: humble.l515
     image: gai313/ros2:humble.l515
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        - ROS=humble
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile
+    #  args:
+    #    - ROS=humble
     privileged: true
     ipc: host
     network_mode: host
