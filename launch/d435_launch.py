@@ -85,7 +85,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([
             os.path.join(
                 get_package_share_directory('nakalab_realsense'),
-                'launch', 'display_launch.py'
+                'launch', 'display_d435_launch.py'
             )
         ]),
         launch_arguments={

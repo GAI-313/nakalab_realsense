@@ -15,19 +15,19 @@ def generate_launch_description():
 
     default_xacro = os.path.join(
         get_package_share_directory('nakalab_realsense'),
-        'urdf', 'd435.urdf.xacro'
+        'urdf', 'd415.urdf.xacro'
     )
 
+
+    declare_camera_name = DeclareLaunchArgument(
+        'camera_name', default_value='d415',
+        description='カメラ名'
+    )
 
     declare_xacro_file = DeclareLaunchArgument(
         'xacro_file', default_value=default_xacro,
         description='デモ用カメラの Xacro モデルファイルの絶対パス'
     )
-    declare_camera_name = DeclareLaunchArgument(
-        'camera_name', default_value='d435',
-        description='カメラ名'
-    )
-
     ld.add_action(declare_xacro_file)
     ld.add_action(declare_camera_name)
 
