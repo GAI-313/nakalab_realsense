@@ -1,7 +1,8 @@
 # nakalab_realsense
 
-ネイティブサポートカメラ
+ネイティブサポートカメラ（動作検証済）
 - D435
+- D435i
 - D415
 - L515（Docker）
 
@@ -35,6 +36,10 @@ ros2 launch nakalab_realsense camera_launch.py
 ```bash
 # d435 カメラとして起動
 ros2 launch nakalab_realsense d435_launch.py
+```
+```bash
+# d435i カメラとして起動
+ros2 launch nakalab_realsense d435i_launch.py
 ```
 ```bash
 # d415 カメラとして起動
