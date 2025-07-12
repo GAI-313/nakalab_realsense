@@ -31,7 +31,7 @@
     diagnostics_period: 0.0
 
     # Post-Processing Filters 
-    align_depth.enable: false
+    align_depth.enable: true
     colorizer.enable: false
     pointcloud.enable: true
     pointcloud.stream_filter: 2
