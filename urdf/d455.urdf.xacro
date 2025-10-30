@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="sensor_d455" xmlns:xacro="http://ros.org/wiki/xacro">
+    <link name="world"/>
+    
+    <xacro:include filename="$(find realsense2_description)/urdf/_d455.urdf.xacro" />
+    <xacro:arg name="camera_name" default="d455" />
+
+    <xacro:sensor_d455 parent="world" name="$(arg camera_name)" >
+        <origin xyz="0 0 1.0" rpy="0 0 0"/>
+    </xacro:sensor_d455>
+    
+</robot>
