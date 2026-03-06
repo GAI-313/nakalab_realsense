@@ -2,7 +2,7 @@
 <robot name="sensor_d415" xmlns:xacro="http://ros.org/wiki/xacro">
     <link name="world"/>
     
-    <xacro:include filename="$(find realsense2_description)/urdf/_d415.urdf.xacro" />
+    <xacro:include filename="$(find nakalab_realsense)/urdf/_d415.urdf.xacro" />
     <xacro:arg name="camera_name" default="d415" />
 
     <xacro:sensor_d415 parent="world" name="$(arg camera_name)" >
